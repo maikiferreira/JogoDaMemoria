@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:id="@+id/bgGame"
+    android:orientation="vertical"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:orientation="horizontal"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="1dp"
+        android:id="@+id/linear"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/bgGame"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/btnReset"
+            android:layout_width="200dp"
+            android:layout_height="56dp"
+            android:text="@string/reset">
+        </Button>
+    </LinearLayout>
+
+    <GridLayout
+        android:id="@+id/grid"
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:layout_marginTop="64dp"
+        android:alignmentMode="alignMargins"
+        android:columnCount="2"
+        android:columnOrderPreserved="false"
+        android:paddingHorizontal="14dp"
+        android:rowCount="3"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="@+id/bgGame"
+        app:layout_constraintRight_toRightOf="@+id/bgGame"
+        app:layout_constraintTop_toTopOf="@+id/bgGame"
+        >
+
+        <Button
+            android:id="@+id/btn1"
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:layout_row="0"
+            android:layout_column="0"
+            android:layout_gravity="center"
+            android:layout_margin="16dp"
+            android:backgroundTint="@color/blue"
+            android:text="@string/btn1"
+            android:textColor="@color/black"
+            android:textSize="60sp">
+
+        </Button>
+
+        <Button
+            android:id="@+id/btn2"
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:layout_row="0"
+            android:layout_column="1"
+            android:layout_gravity="center"
+            android:layout_margin="16dp"
+            android:backgroundTint="@color/red"
+            android:text="@string/btn2"
+            android:textColor="@color/black"
+            android:textSize="60sp">
+
+        </Button>
+
+        <Button
+            android:id="@+id/btn3"
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:layout_row="1"
+            android:layout_column="0"
+            android:layout_gravity="center"
+            android:layout_margin="16dp"
+            android:backgroundTint="@color/green"
+            android:text="@string/btn3"
+            android:textColor="@color/black"
+            android:textSize="60sp">
+
+        </Button>
+
+        <Button
+            android:id="@+id/btn4"
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:layout_row="1"
+            android:layout_column="1"
+            android:layout_gravity="center"
+            android:layout_margin="16dp"
+            android:backgroundTint="@color/yellow"
+            android:text="@string/btn4"
+            android:textColor="@color/black"
+            android:textSize="60sp">
+
+        </Button>
+
+        <Button
+            android:id="@+id/btn5"
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:layout_row="2"
+            android:layout_column="0"
+            android:layout_gravity="center"
+            android:backgroundTint="@color/gray"
+            android:text="@string/btn5"
+            android:textColor="@color/black"
+            android:textSize="60sp">
+
+        </Button>
+
+        <Button
+            android:id="@+id/btn6"
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:layout_row="2"
+            android:layout_column="1"
+            android:layout_gravity="center"
+            android:layout_margin="16dp"
+            android:backgroundTint="@color/brown"
+            android:text="@string/btn6"
+            android:textColor="@color/black"
+            android:textSize="60sp">
+
+        </Button>
+
+    </GridLayout>
+
+    <LinearLayout
+        android:id="@+id/progressBox"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginTop="576dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toTopOf="@+id/bgGame"
+        tools:layout_editor_absoluteX="0dp"
+        >
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:text="@string/progress"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <FrameLayout
+            android:layout_width="250dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/progress_bar_border">
+
+            <ProgressBar
+                style="@android:style/Widget.DeviceDefault.Light.ProgressBar.Horizontal"
+                android:id="@+id/progressBar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="1dp"
+                android:max="6"
+                android:min="0"
+                android:progress="0"
+                android:progressDrawable="@drawable/curved_progress_bar"></ProgressBar>
+        </FrameLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/congratulations"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="65dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="@+id/bgGame"
+        tools:layout_editor_absoluteX="0dp"
+        android:visibility="invisible"
+        >
+        <TextView
+            android:layout_width="413dp"
+            android:layout_height="66dp"
+            android:layout_marginBottom="16dp"
+            android:gravity="center"
+            android:text="@string/congratulation"
+            android:textColor="@color/black"
+            android:textSize="60sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:layout_editor_absoluteX="-2dp"
+            />
+
+        <TextView
+            android:layout_width="413dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:gravity="center"
+            android:text="@string/sub_congratulation"
+            android:textColor="@color/black"
+            android:textSize="35sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:layout_editor_absoluteX="-2dp"
+            android:layout_marginTop="35dp"/>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
